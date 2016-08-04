@@ -14,9 +14,9 @@ security:
 spring:
   profiles: development
   datasource:
-    url: jdbc:mysql://192.168.4.11:3306/dev
+    url: jdbc:mysql://192.168.4.63:3306/dev
     username: root
-    password: 3g2win.com
+    password: dbpass
     initialize: false
 security:
   oauth2:
@@ -29,9 +29,9 @@ security:
 spring:
   profiles: docker
   datasource:
-    url: jdbc:mysql://192.168.4.11:3306/dev
+    url: jdbc:mysql://192.168.4.63:3306/dev
     username: root
-    password: 3g2win.com
+    password: dbpass
     initialize: true
 security:
   oauth2:
