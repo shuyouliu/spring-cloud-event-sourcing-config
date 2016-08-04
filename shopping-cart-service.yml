@@ -5,7 +5,7 @@ spring:
 spring:
   profiles: cloud
   datasource:
-    platform: mysql
+    platform: 192.168.4.11
 security:
   oauth2:
     resource:
@@ -21,9 +21,9 @@ spring:
     database: MYSQL
     generate-ddl: true
   datasource:
-    url: jdbc:mysql://192.168.4.63:3306/dev
+    url: jdbc:mysql://192.168.4.11:3306/dev
     username: root
-    password: dbpass
+    password: 3g2win.com
 security:
   oauth2:
     resource:
@@ -48,9 +48,9 @@ spring:
     database: MYSQL
     generate-ddl: true
   datasource:
-    url: jdbc:mysql://192.168.4.63:3306/dev
+    url: jdbc:mysql://192.168.4.11:3306/dev
     username: root
-    password: dbpass
+    password: 3g2win.com
 security:
   oauth2:
     resource:
