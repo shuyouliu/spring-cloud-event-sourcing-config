@@ -7,7 +7,7 @@ spring:
 security:
   oauth2:
     resource:
-      userInfoUri: ${vcap.services.user-service.credentials.uri:http://192.168.4.63:8181}/uaa/user
+      userInfoUri: ${vcap.services.user-service.credentials.uri:http://192.168.1.64:8181}/uaa/user
     client:
       client-id: acme
 ---
@@ -21,10 +21,10 @@ spring:
 security:
   oauth2:
     resource:
-      userInfoUri: http://192.168.4.63:8181/uaa/user
+      userInfoUri: http://192.168.1.64:8181/uaa/user
     client:
       client-id: acme
-      access-token-uri: http://192.168.4.63:8787
+      access-token-uri: http://192.168.1.64:8787
 ---
 spring:
   profiles: docker
@@ -36,7 +36,7 @@ spring:
 security:
   oauth2:
     resource:
-      userInfoUri: http://${DOCKER_IP:192.168.4.63}:8181/uaa/user
+      userInfoUri: http://${DOCKER_IP:192.168.1.64}:8181/uaa/user
     client:
       client-id: acme
 eureka:
@@ -46,7 +46,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://192.168.4.63:8761/eureka/
+      defaultZone: http://192.168.1.64:8761/eureka/
 ---
 spring:
   application:
@@ -61,7 +61,7 @@ spring:
 security:
   oauth2:
     resource:
-      userInfoUri: http://192.168.4.63:8181/uaa/user
+      userInfoUri: http://192.168.1.64:8181/uaa/user
     client:
       client-id: acme
-      access-token-uri: http://192.168.4.63:8787
+      access-token-uri: http://192.168.1.64:8787

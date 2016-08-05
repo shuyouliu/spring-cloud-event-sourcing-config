@@ -9,4 +9,4 @@ eureka:
     region: default
     registryFetchIntervalSeconds: 5
     serviceUrl:
-      defaultZone: ${vcap.services.discovery-service.credentials.uri:http://192.168.4.63:8761}/eureka/
+      defaultZone: ${vcap.services.discovery-service.credentials.uri:http://192.168.1.64:8761}/eureka/
