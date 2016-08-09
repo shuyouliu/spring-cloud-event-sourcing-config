@@ -5,16 +5,16 @@ spring:
 spring:
   profiles: cloud
   redis:
-    host: ${vcap.services.catalog-redis.credentials.hostname:192.168.4.63}
+    host: ${vcap.services.catalog-redis.credentials.hostname:localhost}
     port: ${vcap.services.catalog-redis.credentials.port:6379}
 ---
 spring:
   profiles: development
   redis:
-    host: 192.168.4.63
+    host: 192.168.99.100
     port: 6379
   datasource:
-    url: jdbc:mysql://192.168.4.63:3306/dev?useSSL=false
+    url: jdbc:mysql://192.168.99.100:3306/dev?useSSL=false
     username: root
     password: dbpass
     initialize: false
@@ -25,15 +25,15 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://192.168.4.63:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
 ---
 spring:
   profiles: docker
   redis:
-    host: 192.168.4.63
+    host: redis
     port: 6379
   datasource:
-    url: jdbc:mysql://192.168.4.63:3306/dev?useSSL=false
+    url: jdbc:mysql://mysql:3306/dev?useSSL=false
     username: root
     password: dbpass
     initialize: true
@@ -44,12 +44,12 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://192.168.4.63:8761/eureka/
+      defaultZone: http://discovery-service:8761/eureka/
 ---
 spring:
   profiles: test
   redis:
-    host: 192.168.4.63
+    host: localhost
     port: 6379
   jpa:
     database: H2

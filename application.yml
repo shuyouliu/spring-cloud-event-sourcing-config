@@ -3,6 +3,3 @@ info:
 logging:
   level:
     org.springframework.security: DEBUG
-liusy:
-  level:
-    cn.shuyouliu:xxx

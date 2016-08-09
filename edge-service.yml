@@ -18,7 +18,7 @@ zuul:
 security:
   oauth2:
     resource:
-      userInfoUri: ${vcap.services.user-service.credentials.uri:http://192.168.1.64:8181}/uaa/user
+      userInfoUri: ${vcap.services.user-service.credentials.uri:http://localhost:8181}/uaa/user
   ignored: /catalog/**
 hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
 ribbon:
@@ -43,7 +43,7 @@ zuul:
 security:
   oauth2:
     resource:
-      userInfoUri: http://192.168.1.64:8181/uaa/user
+      userInfoUri: http://localhost:8181/uaa/user
   ignored: /catalog/**
 ---
 spring:
@@ -64,7 +64,7 @@ zuul:
 security:
   oauth2:
     resource:
-      userInfoUri: http://${DOCKER_IP:192.168.1.64}:8181/uaa/user
+      userInfoUri: http://${DOCKER_IP:192.168.4.63}:8181/uaa/user
   ignored: /catalog/**
 eureka:
   instance:
@@ -73,7 +73,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://192.168.4.63:8761/eureka/
+      defaultZone: http://discovery-service:8761/eureka/
 hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
 ribbon:
   ConnectTimeout: 3000
