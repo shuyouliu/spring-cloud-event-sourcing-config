@@ -28,6 +28,15 @@ spring:
     password: dbpass
     initialize: true
 security.ignored: /resources/**
+eureka:
+  instance:
+    prefer-ip-address: true
+    non-secure-port: 8181
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://192.168.4.63:8761/eureka/
 ---
 server:
   port: 8181
