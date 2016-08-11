@@ -54,6 +54,8 @@ security:
       userAuthorizationUri: http://192.168.4.63:8181/uaa/oauth/authorize
       clientId: acme
       clientSecret: acmesecret
+  ignored: /assets/**
+  ignored: /login/**
 eureka:
   instance:
     non-secure-port: 8787
